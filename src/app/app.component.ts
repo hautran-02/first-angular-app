@@ -2,11 +2,12 @@ import { HousingLocationComponent } from './housing-location/housing-location.co
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { HelloComponent } from './hello/hello.component';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent, HelloComponent, HousingLocationComponent],
+  imports: [HomeComponent, RouterModule],
   template: ` <main>
     <header class="brand-name">
       <img
@@ -17,7 +18,7 @@ import { HelloComponent } from './hello/hello.component';
       />
     </header>
     <section class="content">
-      <app-home></app-home>
+      <router-outlet></router-outlet>
     </section>
   </main>`,
   styleUrls: ['./app.component.css'],
